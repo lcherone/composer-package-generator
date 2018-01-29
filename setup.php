@@ -96,7 +96,7 @@ process_file('README.md', [
     'name' => $package['name'],
     'title' => $package['title'],
     'description' => $package['description'],
-    'authors' => $authors
+    'authors' => trim($authors)
 ]);
 
 // composer.json

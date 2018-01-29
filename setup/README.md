@@ -40,6 +40,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 ## Credits
 
 {{authors}}
+ - [All Contributors](../../contributors)
 
 ## License
 
