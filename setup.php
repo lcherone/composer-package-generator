@@ -58,7 +58,7 @@ if (!file_exists(TARGET_DIR.'/tests/fixtures')) {
  */
 function process_file($filename, $replace) {
     file_put_contents(
-        TARGET_DIR.'/'.$filename, 
+        TARGET_DIR.'/'.$filename,
         preg_replace_callback("/{{([\w_]{1,})}}/", function ($match) use ($replace) {
             return array_key_exists($match[1], $replace) ? $replace[$match[1]] : '';
         }, file_get_contents(SOURCE_DIR.'/'.$filename))
@@ -86,7 +86,7 @@ foreach ([
 /**
  * Process/Create files which change
  */
- 
+
 // README.md
 $authors = null;
 foreach ($package['authors'] as $author) {
@@ -143,9 +143,9 @@ class '.$testName.' extends TestCase
      */
     public function setUp()
     {
-        
+
     }
-    
+
     /**
      * @coversNothing
      */
@@ -153,7 +153,7 @@ class '.$testName.' extends TestCase
     {
         $this->assertTrue(true);
     }
-    
+
 }'.PHP_EOL);
 
 # done
