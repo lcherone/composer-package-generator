@@ -27,6 +27,8 @@ Git clone this project like:
 $ git clone git@github.com:lcherone/composer-package-generator.git .
 ```
 
+Dont forget once cloned delete the `.git/` folder!
+
 
 ## Generate your project files
 
