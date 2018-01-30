@@ -88,15 +88,15 @@ foreach ([
  */
 
 // README.md
-$authors = null;
+$authors = [];
 foreach ($package['authors'] as $author) {
-    $authors = ' - '.sprintf('[%s](%s)', $author['name'], $author['homepage']).PHP_EOL;
+    $authors[] = ' - '.sprintf('[%s](%s)', $author['name'], $author['homepage']);
 }
 process_file('README.md', [
     'name' => $package['name'],
     'title' => $package['title'],
     'description' => $package['description'],
-    'authors' => trim($authors)
+    'authors' => implode(PHP_EOL, $authors)
 ]);
 
 // composer.json
