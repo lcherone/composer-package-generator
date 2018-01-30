@@ -80,7 +80,7 @@ your need to finish off.
 **Badges:**
 
 Markdown links and images will have been added to the `README.md` and should work 
-once you push your project and enable the the project on these 3rd party sites.
+once you push your project and enable the project on these 3rd party sites.
 
  - [`Build Status (https://travis-ci.org)`](https://travis-ci.org)
  - [`StyleCI (https://styleci.io)`](https://styleci.io)
