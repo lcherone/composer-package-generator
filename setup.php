@@ -156,6 +156,42 @@ class '.$testName.' extends TestCase
 
 }'.PHP_EOL);
 
-# done
-echo 'Done, you can now remove the setup.php and the ./setup/ folder.'.PHP_EOL;
-echo 'Happy coding!'.PHP_EOL;
+echo 'Your package files have been successfully generated!'.PHP_EOL;
+
+/**
+ * Ask question, do callback.
+ */
+function ask($options, $callback) {
+    $response = null;
+    do {
+        $response = readline($options['question']);
+    } while (!in_array($response, $options['expected']));
+    readline_add_history($response);
+    
+    return $callback($response);
+}
+
+$yesno = ['y', 'yes', 'n', 'no'];
+
+ask([
+    'question' => 'Would you like to remove the setup files? [yes|no]:',
+    'expected' => $yesno
+], function ($response) {
+    if (in_array($response, ['y', 'yes'])) {
+        `rm -Rf ./setup  && rm -f setup.php && rm -Rf .git/`;
+        echo 'Setup files have been removed.'.PHP_EOL;
+    }
+});
+
+ask([
+    'question' => 'Would you like to run composer install and run tests? [yes|no]:',
+    'expected' => $yesno
+], function ($response) {
+    if (in_array($response, ['y', 'yes'])) {
+        `composer install`;
+        echo `composer test`;
+    }
+});
+
+echo 'Happy coding! - If you liked this, star it!'.PHP_EOL;
+
